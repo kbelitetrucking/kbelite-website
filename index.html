@@ -1,439 +1,423 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+  <meta charset="UTF-8" />
+  <title>KB Elite Trucking Inc. | Drayage Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --kb-black: #000000;
+      --kb-dark: #111111;
+      --kb-darker: #080808;
+      --kb-orange: #f28b1a; /* matte-style orange */
+      --kb-white: #ffffff;
+      --kb-gray: #cccccc;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--kb-darker);
+      color: var(--kb-white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--kb-orange);
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #050505, #111111);
+    }
+
+    header {
+      background-color: var(--kb-black);
+      border-bottom: 3px solid var(--kb-orange);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      border: 2px solid var(--kb-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--kb-orange);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: var(--kb-gray);
+    }
+
+    .hero {
+      background-color: var(--kb-dark);
+      padding: 48px 20px 40px;
+      border-bottom: 1px solid #222;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--kb-gray);
+      margin-bottom: 14px;
+    }
+
+    .hero-accent {
+      width: 80px;
+      height: 3px;
+      background-color: var(--kb-orange);
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--kb-gray);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      padding: 32px 20px;
+      border-bottom: 1px solid #222;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 18px;
+      height: 3px;
+      border-radius: 999px;
+      background-color: var(--kb-orange);
+    }
+
+    .section p {
+      font-size: 14px;
+      color: var(--kb-gray);
+      max-width: 800px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 12px;
+    }
+
+    .list-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 14px;
+      color: var(--kb-gray);
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    li::before {
+      content: "";
+      margin-top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: var(--kb-orange);
+      flex-shrink: 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid #333;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--kb-gray);
+      background-color: #151515;
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--kb-gray);
+    }
+
+    .credentials div span {
+      font-weight: 600;
+      color: var(--kb-white);
+    }
+
+    .contact-block {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--kb-gray);
+    }
+
+    .contact-block strong {
+      color: var(--kb-white);
+    }
+
+    footer {
+      background-color: var(--kb-black);
+      border-top: 2px solid var(--kb-orange);
+      padding: 14px 20px;
+      font-size: 12px;
+      color: var(--kb-gray);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .header-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;KB Elite Trucking Inc. | Drayage Services&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-black: #000000;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-dark: #111111;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-darker: #080808;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-orange: #f28b1a; /* matte-style orange */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-white: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--kb-gray: #cccccc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-darker);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>a {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(to bottom, #050505, #111111);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-black);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 3px solid var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.header-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: var(--max-width);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo-block {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo-placeholder {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 44px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 44px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand-text {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand-text h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand-text span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-dark);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 48px 20px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #222;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: var(--max-width);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-title {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-accent {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-meta {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>main {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #222;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: var(--max-width);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-title::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.two-column {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(2, minmax(0, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.list-title {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>ul {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>li {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>li::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 7px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.pill-row {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.pill {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #333;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 4px 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: #151515;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.credentials {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.credentials div span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-white);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact-block {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact-block strong {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-white);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--kb-black);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 2px solid var(--kb-orange);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--kb-gray);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: var(--max-width);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.two-column {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hero-title {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>font-size: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>.header-inner {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>flex-direction: row;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="page"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HEADER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo-block"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Replace this placeholder with your actual logo image if you want --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Example: &lt;img src="logo.png" alt="KB Elite Trucking Logo" class="logo-img" /&gt; --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="logo-placeholder"&gt;KB&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="brand-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;KB ELITE TRUCKING INC.&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Professional Port Drayage Across the Southeast&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-title"&gt;On‑Time. Professional. Elite Drayage Services.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-subtitle"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Serving Charleston, Savannah &amp;amp; Jacksonville with reliable port container transport.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-accent"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Port container transport • Safety‑driven operations • Clean equipment • Direct communication with ownership</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;main&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- ABOUT --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="section-title"&gt;Who We Are&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>KB Elite Trucking Inc. is a safety‑driven drayage carrier specializing in</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;port container transport&lt;/strong&gt; across the Southeast. We deliver reliable, on‑time service</p>
-<p class="p1"><span class="Apple-converted-space">            </span>supported by clean equipment, premium communication, and a commitment to operational excellence.</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- SERVICES + SERVICE AREA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="two-column"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="list-title"&gt;Core Services&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Port drayage (20’, 40’, 45’)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Import &amp;amp; export container transport&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Live load / live unload&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Drop &amp;amp; hook&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Yard pulls&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Local &amp;amp; regional Southeast coverage&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Dedicated lanes available&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Last‑mile container delivery&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Rail drayage — available upon request&lt;/strong&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="list-title"&gt;Service Area&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Charleston, SC&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Savannah, GA&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Jacksonville, FL&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Inland Southeast region&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="pill-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="pill"&gt;Port Focused&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="pill"&gt;Intermodal‑Ready&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="pill"&gt;Regional Coverage&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- EQUIPMENT + WHY KB ELITE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="two-column"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="list-title"&gt;Our Fleet&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Day cabs &amp;amp; sleeper tractors&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;20/40/45‑ft chassis&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Air‑ride equipment&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;GPS‑tracked units&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;ELD compliant&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Clean, professional presentation&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="list-title"&gt;Why KB Elite&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Direct communication with ownership&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Fast response times&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Professional drivers&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;On‑time performance&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Fully insured&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Safety‑first operations&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Flexible capacity for urgent or last‑minute pulls&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- COMPLIANCE + CONTACT --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="two-column"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="section-title"&gt;Compliance&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="credentials"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;span&gt;MC:&lt;/span&gt; 006885&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;span&gt;DOT:&lt;/span&gt; 2964866&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;span&gt;SCAC:&lt;/span&gt; KETN&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;span&gt;Insurance:&lt;/span&gt; COI available upon request&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="section-title"&gt;Contact&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="contact-block"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Kendall Bolden — Director of Operations&lt;/strong&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Phone: &lt;a href="tel:18435058688"&gt;843‑505‑8688&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Email: &lt;a href="mailto:kbelitetrucking@gmail.com"&gt;kbelitetrucking@gmail.com&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;© 2026 KB Elite Trucking Inc. — All Rights Reserved&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;Port Drayage • Southeast USA&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <div class="logo-block">
+          <!-- Replace this placeholder with your actual logo image if you want -->
+          <!-- Example: <img src="logo.png" alt="KB Elite Trucking Logo" class="logo-img" /> -->
+          <div class="logo-placeholder">KB</div>
+          <div class="brand-text">
+            <h1>KB ELITE TRUCKING INC.</h1>
+            <span>Professional Port Drayage Across the Southeast</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-title">On‑Time. Professional. Elite Drayage Services.</div>
+        <div class="hero-subtitle">
+          Serving Charleston, Savannah &amp; Jacksonville with reliable port container transport.
+        </div>
+        <div class="hero-accent"></div>
+        <div class="hero-meta">
+          Port container transport • Safety‑driven operations • Clean equipment • Direct communication with ownership
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- ABOUT -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-title">Who We Are</div>
+          <p>
+            KB Elite Trucking Inc. is a safety‑driven drayage carrier specializing in
+            <strong>port container transport</strong> across the Southeast. We deliver reliable, on‑time service
+            supported by clean equipment, premium communication, and a commitment to operational excellence.
+          </p>
+        </div>
+      </section>
+
+      <!-- SERVICES + SERVICE AREA -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="two-column">
+            <div>
+              <div class="list-title">Core Services</div>
+              <ul>
+                <li>Port drayage (20’, 40’, 45’)</li>
+                <li>Import &amp; export container transport</li>
+                <li>Live load / live unload</li>
+                <li>Drop &amp; hook</li>
+                <li>Yard pulls</li>
+                <li>Local &amp; regional Southeast coverage</li>
+                <li>Dedicated lanes available</li>
+                <li>Last‑mile container delivery</li>
+                <li><strong>Rail drayage — available upon request</strong></li>
+              </ul>
+            </div>
+            <div>
+              <div class="list-title">Service Area</div>
+              <ul>
+                <li>Charleston, SC</li>
+                <li>Savannah, GA</li>
+                <li>Jacksonville, FL</li>
+                <li>Inland Southeast region</li>
+              </ul>
+              <div class="pill-row">
+                <div class="pill">Port Focused</div>
+                <div class="pill">Intermodal‑Ready</div>
+                <div class="pill">Regional Coverage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPMENT + WHY KB ELITE -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="two-column">
+            <div>
+              <div class="list-title">Our Fleet</div>
+              <ul>
+                <li>Day cabs &amp; sleeper tractors</li>
+                <li>20/40/45‑ft chassis</li>
+                <li>Air‑ride equipment</li>
+                <li>GPS‑tracked units</li>
+                <li>ELD compliant</li>
+                <li>Clean, professional presentation</li>
+              </ul>
+            </div>
+            <div>
+              <div class="list-title">Why KB Elite</div>
+              <ul>
+                <li>Direct communication with ownership</li>
+                <li>Fast response times</li>
+                <li>Professional drivers</li>
+                <li>On‑time performance</li>
+                <li>Fully insured</li>
+                <li>Safety‑first operations</li>
+                <li>Flexible capacity for urgent or last‑minute pulls</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPLIANCE + CONTACT -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="two-column">
+            <div>
+              <div class="section-title">Compliance</div>
+              <div class="credentials">
+                <div><span>MC:</span> 006885</div>
+                <div><span>DOT:</span> 2964866</div>
+                <div><span>SCAC:</span> KETN</div>
+                <div><span>Insurance:</span> COI available upon request</div>
+              </div>
+            </div>
+            <div>
+              <div class="section-title">Contact</div>
+              <div class="contact-block">
+                <p><strong>Kendall Bolden — Director of Operations</strong></p>
+                <p>Phone: <a href="tel:18435058688">843‑505‑8688</a></p>
+                <p>Email: <a href="mailto:kbelitetrucking@gmail.com">kbelitetrucking@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>© 2026 KB Elite Trucking Inc. — All Rights Reserved</div>
+        <div>Port Drayage • Southeast USA</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
