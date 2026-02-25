@@ -1,423 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>KB Elite Trucking Inc. | Drayage Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    :root {
-      --kb-black: #000000;
-      --kb-dark: #111111;
-      --kb-darker: #080808;
-      --kb-orange: #f28b1a; /* matte-style orange */
-      --kb-white: #ffffff;
-      --kb-gray: #cccccc;
-      --max-width: 1100px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB Elite Trucking</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        header {
+            background: url('https://github.com/kbelitetrucking/kbelite-website/blob/main/image1.jpg?raw=true') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--kb-darker);
-      color: var(--kb-white);
-      line-height: 1.6;
-    }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px black;
+        }
 
-    a {
-      color: var(--kb-orange);
-      text-decoration: none;
-    }
+        .section {
+            padding: 60px 10%;
+        }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(to bottom, #050505, #111111);
-    }
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff8c00;
+            padding-left: 15px;
+        }
 
-    header {
-      background-color: var(--kb-black);
-      border-bottom: 3px solid var(--kb-orange);
-    }
+        .fleet-image, .yard-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-    .header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
+        .cta-buttons {
+            margin-top: 30px;
+        }
 
-    .logo-block {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .cta-buttons a {
+            display: inline-block;
+            padding: 15px 25px;
+            margin-right: 15px;
+            background-color: #ff8c00;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-    .logo-placeholder {
-      width: 44px;
-      height: 44px;
-      border-radius: 6px;
-      border: 2px solid var(--kb-orange);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--kb-orange);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-text h1 {
-      font-size: 18px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand-text span {
-      font-size: 12px;
-      color: var(--kb-gray);
-    }
-
-    .hero {
-      background-color: var(--kb-dark);
-      padding: 48px 20px 40px;
-      border-bottom: 1px solid #222;
-    }
-
-    .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .hero-title {
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--kb-gray);
-      margin-bottom: 14px;
-    }
-
-    .hero-accent {
-      width: 80px;
-      height: 3px;
-      background-color: var(--kb-orange);
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-
-    .hero-meta {
-      font-size: 13px;
-      color: var(--kb-gray);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .section {
-      padding: 32px 20px;
-      border-bottom: 1px solid #222;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-title::before {
-      content: "";
-      width: 18px;
-      height: 3px;
-      border-radius: 999px;
-      background-color: var(--kb-orange);
-    }
-
-    .section p {
-      font-size: 14px;
-      color: var(--kb-gray);
-      max-width: 800px;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 12px;
-    }
-
-    .list-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 14px;
-      color: var(--kb-gray);
-    }
-
-    li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    li::before {
-      content: "";
-      margin-top: 7px;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background-color: var(--kb-orange);
-      flex-shrink: 0;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .pill {
-      border-radius: 999px;
-      border: 1px solid #333;
-      padding: 4px 10px;
-      font-size: 12px;
-      color: var(--kb-gray);
-      background-color: #151515;
-    }
-
-    .credentials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-      font-size: 14px;
-      color: var(--kb-gray);
-    }
-
-    .credentials div span {
-      font-weight: 600;
-      color: var(--kb-white);
-    }
-
-    .contact-block {
-      margin-top: 8px;
-      font-size: 14px;
-      color: var(--kb-gray);
-    }
-
-    .contact-block strong {
-      color: var(--kb-white);
-    }
-
-    footer {
-      background-color: var(--kb-black);
-      border-top: 2px solid var(--kb-orange);
-      padding: 14px 20px;
-      font-size: 12px;
-      color: var(--kb-gray);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-title {
-        font-size: 24px;
-      }
-
-      .header-inner {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <!-- HEADER -->
-    <header>
-      <div class="header-inner">
-        <div class="logo-block">
-          <!-- Replace this placeholder with your actual logo image if you want -->
-          <!-- Example: <img src="logo.png" alt="KB Elite Trucking Logo" class="logo-img" /> -->
-          <div class="logo-placeholder">KB</div>
-          <div class="brand-text">
-            <h1>KB ELITE TRUCKING INC.</h1>
-            <span>Professional Port Drayage Across the Southeast</span>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-title">On‑Time. Professional. Elite Drayage Services.</div>
-        <div class="hero-subtitle">
-          Serving Charleston, Savannah &amp; Jacksonville with reliable port container transport.
-        </div>
-        <div class="hero-accent"></div>
-        <div class="hero-meta">
-          Port container transport • Safety‑driven operations • Clean equipment • Direct communication with ownership
-        </div>
-      </div>
-    </section>
+<header>
+    <h1>KB Elite Trucking<br>Port-Dominant. Reliable. Professional.</h1>
+</header>
 
-    <main>
-      <!-- ABOUT -->
-      <section class="section">
-        <div class="section-inner">
-          <div class="section-title">Who We Are</div>
-          <p>
-            KB Elite Trucking Inc. is a safety‑driven drayage carrier specializing in
-            <strong>port container transport</strong> across the Southeast. We deliver reliable, on‑time service
-            supported by clean equipment, premium communication, and a commitment to operational excellence.
-          </p>
-        </div>
-      </section>
+<section class="section">
+    <h2>Our Mission</h2>
+    <p>
+        KB Elite Trucking delivers dependable, professional drayage services across the Southeast.
+        We operate with precision, integrity, and a commitment to excellence — every load, every time.
+    </p>
+</section>
 
-      <!-- SERVICES + SERVICE AREA -->
-      <section class="section">
-        <div class="section-inner">
-          <div class="two-column">
-            <div>
-              <div class="list-title">Core Services</div>
-              <ul>
-                <li>Port drayage (20’, 40’, 45’)</li>
-                <li>Import &amp; export container transport</li>
-                <li>Live load / live unload</li>
-                <li>Drop &amp; hook</li>
-                <li>Yard pulls</li>
-                <li>Local &amp; regional Southeast coverage</li>
-                <li>Dedicated lanes available</li>
-                <li>Last‑mile container delivery</li>
-                <li><strong>Rail drayage — available upon request</strong></li>
-              </ul>
-            </div>
-            <div>
-              <div class="list-title">Service Area</div>
-              <ul>
-                <li>Charleston, SC</li>
-                <li>Savannah, GA</li>
-                <li>Jacksonville, FL</li>
-                <li>Inland Southeast region</li>
-              </ul>
-              <div class="pill-row">
-                <div class="pill">Port Focused</div>
-                <div class="pill">Intermodal‑Ready</div>
-                <div class="pill">Regional Coverage</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="section">
+    <h2>Our Fleet</h2>
+    <p>
+        Our trucks are maintained to the highest standards to ensure reliability, safety, and on‑time performance.
+    </p>
+    <img src="https://github.com/kbelitetrucking/kbelite-website/blob/main/image2.jpg?raw=true" class="fleet-image" alt="Fleet Image">
+</section>
 
-      <!-- EQUIPMENT + WHY KB ELITE -->
-      <section class="section">
-        <div class="section-inner">
-          <div class="two-column">
-            <div>
-              <div class="list-title">Our Fleet</div>
-              <ul>
-                <li>Day cabs &amp; sleeper tractors</li>
-                <li>20/40/45‑ft chassis</li>
-                <li>Air‑ride equipment</li>
-                <li>GPS‑tracked units</li>
-                <li>ELD compliant</li>
-                <li>Clean, professional presentation</li>
-              </ul>
-            </div>
-            <div>
-              <div class="list-title">Why KB Elite</div>
-              <ul>
-                <li>Direct communication with ownership</li>
-                <li>Fast response times</li>
-                <li>Professional drivers</li>
-                <li>On‑time performance</li>
-                <li>Fully insured</li>
-                <li>Safety‑first operations</li>
-                <li>Flexible capacity for urgent or last‑minute pulls</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="section">
+    <h2>Container Yard & Operations</h2>
+    <p>
+        With secure, organized, and efficient container handling, KB Elite ensures your freight moves smoothly through every stage of the supply chain.
+    </p>
+    <img src="https://github.com/kbelitetrucking/kbelite-website/blob/main/image3.jpg?raw=true" class="yard-image" alt="Yard Image">
+</section>
 
-      <!-- COMPLIANCE + CONTACT -->
-      <section class="section">
-        <div class="section-inner">
-          <div class="two-column">
-            <div>
-              <div class="section-title">Compliance</div>
-              <div class="credentials">
-                <div><span>MC:</span> 006885</div>
-                <div><span>DOT:</span> 2964866</div>
-                <div><span>SCAC:</span> KETN</div>
-                <div><span>Insurance:</span> COI available upon request</div>
-              </div>
-            </div>
-            <div>
-              <div class="section-title">Contact</div>
-              <div class="contact-block">
-                <p><strong>Kendall Bolden — Director of Operations</strong></p>
-                <p>Phone: <a href="tel:18435058688">843‑505‑8688</a></p>
-                <p>Email: <a href="mailto:kbelitetrucking@gmail.com">kbelitetrucking@gmail.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+<section class="section">
+    <h2>Get in Touch</h2>
+    <p>Ready to move freight with a carrier you can trust?</p>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
-        <div>© 2026 KB Elite Trucking Inc. — All Rights Reserved</div>
-        <div>Port Drayage • Southeast USA</div>
-      </div>
-    </footer>
-  </div>
+    <div class="cta-buttons">
+        <a href="mailto:info@kbelitetrucking.com">Request a Quote</a>
+        <a href="apply.html">Driver Application</a>
+    </div>
+</section>
+
+<footer>
+    © 2026 KB Elite Trucking — All Rights Reserved
+</footer>
+
 </body>
 </html>
