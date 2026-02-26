@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application – KB Elite Trucking</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            border-left: 5px solid #ff8c00;
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #111;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #222;
+            color: white;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff8c00;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Driver & Owner‑Operator Application</h1>
+
+<form action="mailto:kbelitetrucking@gmail.com" method="POST" enctype="text/plain">
+
+    <label>Full Name</label>
+    <input type="text" name="Full Name" required>
+
+    <label>Phone Number</label>
+    <input type="text" name="Phone Number" required>
+
+    <label>Email Address</label>
+    <input type="email" name="Email" required>
+
+    <label>CDL Type</label>
+    <select name="CDL Type" required>
+        <option value="Class A">Class A</option>
+        <option value="Class B">Class B</option>
+    </select>
+
+    <label>Years of Experience</label>
+    <input type="text" name="Experience" required>
+
+    <label>Do you have a TWIC card?</label>
+    <select name="TWIC" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <label>Port Experience</label>
+    <select name="Port Experience" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <label>Are you applying as a Company Driver or Owner‑Operator?</label>
+    <select name="Position" required>
+        <option value="Company Driver">Company Driver</option>
+        <option value="Owner Operator">Owner‑Operator</option>
+    </select>
+
+    <label>If Owner‑Operator: Truck Year, Make, Model</label>
+    <input type="text" name="Truck Info">
+
+    <label>Additional Notes</label>
+    <textarea name="Notes" rows="4"></textarea>
+
+    <button type="submit">Submit Application</button>
+</form>
+
+<a href="index.html">← Back to Home</a>
+
+</body>
+</html>
